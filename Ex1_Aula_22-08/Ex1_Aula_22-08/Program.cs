@@ -24,24 +24,20 @@ namespace Ex1_Aula_22_08
             a2.Apelido = "Nina";
             a2.Selvagem = false;
             a2.Dono = p1;
-            a3.Nome = "Coelho";
-            a3.Apelido = "Fofinho";
-            a3.Selvagem = false;
-            a3.Dono = p1;
-            a4.Nome = "Galinha";
-            a4.Apelido = "Pintadinha";
-            a4.Selvagem = true;
-            a4.Dono = p1;
-            a5.Nome = "Tartaruga";
-            a5.Apelido = "Tuck";
-            a5.Selvagem = false;
-            a5.Dono = p1;
             p1.Add(a1);
-            p1.Add(a3);
             p1.Add(a2);
+            p1.SizeOf();
+            p1.gets(1);
+            p1.Remove(a1);
+            p1.gets(1);
+            p1.SizeOf();
+            a5.Nome = "Dinossauro";
+            a5.Apelido = "Pingado";
+            a5.Selvagem = true;
+            a5.Dono = p1;
             p1.Add(a5);
-            p1.Add(a4);
-
+            p1.gets(1);
+            Console.Read();
 
         }
     }

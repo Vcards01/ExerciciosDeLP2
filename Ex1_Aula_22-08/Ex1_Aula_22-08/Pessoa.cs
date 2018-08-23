@@ -43,10 +43,9 @@ namespace Ex1_Aula_22_08
         }
         public void Remove(Animal a)
         {
-            string remove=Console.ReadLine();
             for(int i=0;i<qtdd;i++)
             {
-                if(remove==pet[i].Nome)
+                if(pet[i]==a)
                 {
                     for(int j=i;j<qtdd;j++)
                     {
@@ -59,7 +58,20 @@ namespace Ex1_Aula_22_08
         }
         public void SizeOf()
         {
-            
+            for(int i=0;i<qtdd;i++)
+            {
+                Console.WriteLine(pet[i].Apelido);
+            }
+        }
+        public void gets(int ind)
+        {
+            for(int i=0;i<qtdd;i++)
+            {
+                if(i==ind)
+                {
+                    Console.WriteLine(pet[i].Apelido);
+                }
+            }
         }
         public string Nome
         {

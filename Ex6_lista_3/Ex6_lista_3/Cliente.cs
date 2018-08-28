@@ -8,13 +8,21 @@ namespace Ex6_lista_3
 {
     class Cliente
     {
+        private const int MAX = 10;
         private string nome;
         private long cpf;
+        private Conta[] contas = new Conta[MAX];
 
       
         public void ListarContas()
         {
-
+            for(int i=0;i<MAX;i++)
+            {
+                Console.WriteLine("Conta"+i);
+                Console.WriteLine(contas[i].NumAgencia);
+                Console.WriteLine(contas[i].NumConta);
+                Console.WriteLine(contas[i].Saldo);
+            }
         }
 
         public string Nome
@@ -39,7 +47,7 @@ namespace Ex6_lista_3
 
             set
             {
-                cpf = (value <= 0) ? value : 0;
+                cpf = (value >= 0) ? value : 0;
             }
         }
 

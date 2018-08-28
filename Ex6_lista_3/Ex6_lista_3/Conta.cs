@@ -80,7 +80,7 @@ namespace Ex6_lista_3
             }
         }
 
-        public long Senha
+        private long Senha
         {
             get
             {
@@ -113,7 +113,7 @@ namespace Ex6_lista_3
                 return limite;
             }
 
-            set
+            private set
             {
                 limite = value;
             }

@@ -9,22 +9,46 @@ namespace Ex6_lista_3
     class Cliente
     {
         private const int MAX = 10;
+        private int qtdd = 0;
         private string nome;
         private long cpf;
         private Conta[] contas = new Conta[MAX];
 
-      
+        public void AddConta(Conta c1)
+        {
+            for (int i = 0; i < MAX; i++)
+            {
+                if (qtdd < MAX)
+                {
+                    contas[i] = c1;
+                }
+            }
+
+        }
+        public void RemoveConta(Conta c1)
+        {
+            for (int i = 0; i < MAX; i++)
+            {
+                if (contas[i] == c1)
+                {
+                    for (int j = i; j < MAX; j++)
+                    {
+                        contas[j] = contas[j + 1];
+                    }
+                    qtdd--;
+                }
+            }
+        }
         public void ListarContas()
         {
             for(int i=0;i<MAX;i++)
             {
-                Console.WriteLine("Conta"+i);
-                Console.WriteLine(contas[i].NumAgencia);
-                Console.WriteLine(contas[i].NumConta);
-                Console.WriteLine(contas[i].Saldo);
+                Console.Write(contas[i].NumConta);
+                Console.Write(contas[i].NumAgencia);
+                Console.Write(contas[i].Saldo);
+                Console.Write(contas[i].Limite);
             }
         }
-
         public string Nome
         {
             get
@@ -47,10 +71,9 @@ namespace Ex6_lista_3
 
             set
             {
-                cpf = (value >= 0) ? value : 0;
+                cpf = value;
             }
         }
-
     }
-
+}
 }

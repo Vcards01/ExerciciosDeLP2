@@ -11,48 +11,48 @@ namespace Ex6_lista_3
         private long numConta;
         private long numAgencia;
         private long senha;
-        private double saldo;
-        private double limite;
+        private double saldo=0;
+        private double limite=100;
         private int tempoConta;
+        private Cliente clienteC;
+        private Banco bancoC;
 
-
-        public bool Sacar(double valor, long senha)
+        public Conta(Cliente c1,Banco b1)
         {
-            if(senha==Senha)
-            {
-                if(valor<=Saldo+Limite)
-                {
-                    Saldo =Saldo- valor;
-                    Console.WriteLine("Saque realizado com sucesso");
-                    return true;
-                }
-                else
-                {
-                    Console.WriteLine("Saldo insuficiente");
-                    return false;
-                }
-            }
-            else
-            {
-                Console.WriteLine("senha incorreta");
-                return false;
-            }
+            ClienteC = c1;
+            BancoC = b1;
         }
-        public void depositar(double valor, long senha)
+        public bool Sacar(double valor, long senha)
         {
             if (senha == Senha)
             {
-                Saldo = Saldo + valor;
-                Console.WriteLine("Deposito feito com sucesso");
+                saldo = Saldo - valor;
+                return true;
             }
             else
-            {
-                Console.WriteLine("Senha invalida");
-            }
+            { return false; }
+
         }
-
-
-
+        public void Depositar(double valor, long senha)
+        {
+            if (senha == Senha)
+            {
+                saldo = Saldo + valor;
+            }
+            
+        }
+        public double SolcitarLimite(double valor, long senha)
+        {
+            if(senha==Senha)
+            {
+                if( bancoC.AprovarLimite(valor, TempoConta)==1)
+                {
+                   limite = Limite + valor;
+                    return 1;
+                }
+            }
+            return 0;
+        }
 
         public long NumConta
         {
@@ -80,7 +80,7 @@ namespace Ex6_lista_3
             }
         }
 
-        private long Senha
+        public long Senha
         {
             get
             {
@@ -100,10 +100,7 @@ namespace Ex6_lista_3
                 return saldo;
             }
 
-            set
-            {
-                saldo = value;
-            }
+            
         }
 
         public double Limite
@@ -113,10 +110,7 @@ namespace Ex6_lista_3
                 return limite;
             }
 
-            private set
-            {
-                limite = value;
-            }
+            
         }
 
         public int TempoConta
@@ -132,6 +126,30 @@ namespace Ex6_lista_3
             }
         }
 
-        
-    }
+        internal Cliente ClienteC
+        {
+            get
+            {
+                return clienteC;
+            }
+
+            set
+            {
+                clienteC = value;
+            }
+        }
+
+        internal Banco BancoC
+        {
+            get
+            {
+                return bancoC;
+            }
+
+            set
+            {
+                bancoC = value;
+            }
+        }
+    } 
 }

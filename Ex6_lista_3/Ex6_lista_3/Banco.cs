@@ -8,32 +8,68 @@ namespace Ex6_lista_3
 {
     class Banco
     {
-        private const int MAX = 100;
+        private const int MAX = 10;
+        private int qtdd = 0;
         private int numBanco;
-        private Conta[] contas = new Conta[MAX]; 
+        private Conta[] contasB = new Conta[MAX];
 
         public void ListarContas()
         {
             for (int i = 0; i < MAX; i++)
             {
-                Console.WriteLine("Conta" + i);
-                Console.WriteLine(contas[i].NumAgencia);
-                Console.WriteLine(contas[i].NumConta);
-                Console.WriteLine(contas[i].Saldo);
+                Console.Write(contasB[i].NumConta);
+                Console.Write(contasB[i].NumAgencia);
+                Console.Write(contasB[i].Saldo);
+                Console.Write(contasB[i].Limite);
             }
         }
-        public void ListarContas(long numAgencia)
+        public void ListarContas(double numAgencia)
         {
             for (int i = 0; i < MAX; i++)
             {
-                if(contas[i].NumAgencia==numAgencia)
+                if (numAgencia == contasB[i].NumAgencia)
                 {
-                    Console.WriteLine("Conta" + i);
-                    Console.WriteLine(contas[i].NumConta);
-                    Console.WriteLine(contas[i].Saldo);
+                    Console.Write(contasB[i].NumConta);
+                    Console.Write(contasB[i].NumAgencia);
+                    Console.Write(contasB[i].Saldo);
+                    Console.Write(contasB[i].Limite);
                 }
-                
+                    
             }
+        }
+        public void AddConta(Conta c1)
+        {
+            for (int i = 0; i < MAX; i++)
+            {
+                if (qtdd < MAX)
+                {
+                    contasB[i] = c1;
+                }
+            }
+
+        }
+        public void RemoveConta(Conta c1)
+        {
+            for (int i = 0; i < MAX; i++)
+            {
+                if (contasB[i] == c1)
+                {
+                    for (int j = i; j < MAX; j++)
+                    {
+                        contasB[j] = contasB[j + 1];
+                    }
+                    qtdd--;
+                }
+            }
+        }
+        public double AprovarLimite(double valor,int tempoConta)
+        {
+            if(valor<=200+(300*tempoConta))
+            {
+                return 1;
+            }
+            return 0;
+            
         }
 
         public int NumBanco
@@ -45,7 +81,7 @@ namespace Ex6_lista_3
 
             set
             {
-                numBanco = (value>=0)?value:0;
+                numBanco = value;
             }
         }
     }

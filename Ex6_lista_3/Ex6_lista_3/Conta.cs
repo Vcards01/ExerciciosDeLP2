@@ -11,8 +11,8 @@ namespace Ex6_lista_3
         private long numConta;
         private long numAgencia;
         private long senha;
-        private double saldo=0;
-        private double limite=100;
+        private double saldo;
+        private double limite;
         private int tempoConta;
         private Cliente clienteC;
         private Banco bancoC;
@@ -21,23 +21,38 @@ namespace Ex6_lista_3
         {
             ClienteC = c1;
             BancoC = b1;
+            saldo = 0;
+            limite = 100;
         }
         public bool Sacar(double valor, long senha)
         {
             if (senha == Senha)
             {
-                saldo = Saldo - valor;
-                return true;
+                if (valor <= saldo)
+                {
+                    saldo = Saldo - valor;
+                    return true;
+                }
+                else
+                { return false; }
             }
             else
-            { return false; }
+            {
+                return false;
+                    
+            }
+            
 
         }
         public void Depositar(double valor, long senha)
         {
             if (senha == Senha)
             {
-                saldo = Saldo + valor;
+                
+                
+                    saldo = Saldo + valor;
+                
+                
             }
             
         }

@@ -9,10 +9,15 @@ namespace Ex6_lista_3
     class Cliente
     {
         private const int MAX = 10;
-        private int qtdd = 0;
+        private int qtdd;
         private string nome;
         private long cpf;
         private Conta[] contas = new Conta[MAX];
+
+        public Cliente()
+        {
+            qtdd = 0;
+        }
 
         public void AddConta(Conta c1)
         {
@@ -21,32 +26,39 @@ namespace Ex6_lista_3
                 if (qtdd < MAX)
                 {
                     contas[i] = c1;
+                    qtdd++;
+                    break;
                 }
             }
 
         }
         public void RemoveConta(Conta c1)
         {
-            for (int i = 0; i < MAX; i++)
-            {
-                if (contas[i] == c1)
+                       
+                int idx = -1;
+                for (int i = 0; i < qtdd; ++i)
                 {
-                    for (int j = i; j < MAX; j++)
+                    if (contas[i] == c1)
                     {
-                        contas[j] = contas[j + 1];
+                        idx = i;
+                        break;
                     }
-                    qtdd--;
                 }
-            }
-        }
+                for (int i = idx; i < qtdd - 1; i++)
+                    contas[i] = contas[i + 1];
+                contas[qtdd - 1] = null;
+                qtdd--;
+         }
+        
         public void ListarContas()
         {
-            for(int i=0;i<MAX;i++)
+            for(int i=0;i<qtdd;i++)
             {
-                Console.Write(contas[i].NumConta);
-                Console.Write(contas[i].NumAgencia);
-                Console.Write(contas[i].Saldo);
-                Console.Write(contas[i].Limite);
+                Console.WriteLine("Conta" + i);
+                Console.WriteLine(contas[i].NumConta);
+                Console.WriteLine(contas[i].NumAgencia);
+                Console.WriteLine(contas[i].Saldo);
+                Console.WriteLine(contas[i].Limite+"\n\n\n\n");
             }
         }
         public string Nome
@@ -76,4 +88,4 @@ namespace Ex6_lista_3
         }
     }
 }
-}
+

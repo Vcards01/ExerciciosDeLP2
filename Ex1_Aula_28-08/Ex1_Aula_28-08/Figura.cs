@@ -11,8 +11,8 @@ namespace Ex1_Aula_28_08
         private int x;
         private int y;
 
-       
-        public Figura(int X, int Y)
+
+        public Figura(int x, int y)
         {
             X = x;
             Y = y;

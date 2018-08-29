@@ -12,24 +12,20 @@ namespace Ex1_Aula_28_08
 
         public Triangulo(int x, int y,double baseT,double altura) : base(x, y)
         {
-             BaseT= baseT;
+            BaseT = baseT;
             Altura = altura;
         }
-
-        public String Getipo()
+        public string GetTipo()
         {
             return "Triangulo Retangulo";
         }
-
         public override double Area()
         {
-            
             return baseT * altura / 2;
-                
         }
         public override string ToString()
         {
-            return base.ToString() + "Base:" + BaseT + "altura:" + Altura;
+            return base.ToString()+" BASE:"+baseT+" Altura:" +altura;
         }
         public double Altura
         {
@@ -56,6 +52,5 @@ namespace Ex1_Aula_28_08
                 baseT = value;
             }
         }
-
     }
 }

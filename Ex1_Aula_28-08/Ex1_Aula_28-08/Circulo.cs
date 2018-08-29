@@ -6,26 +6,35 @@ using System.Threading.Tasks;
 
 namespace Ex1_Aula_28_08
 {
-    class Circulo : Figura
+    class Circulo:Figura
     {
-        private double raio;
+        double raio;
 
-        public Circulo( int x,int y, double raio):base(x,y)
-        {
-            Raio = raio;
-        }
         public Circulo():base(0,0)
         {
 
         }
-        public override string ToString()
+        public Circulo(int x, int y,double raio) : base(x, y)
         {
-            return base.ToString()+"Raio:"+Raio;
+            Raio = raio;
         }
         public override double Area()
         {
             return Math.PI*Math.Pow(raio,2);
         }
+        public override string ToString()
+        {
+            return base.ToString()+" Diametro:" +Diametro;
+        }
+        public double Diametro
+        {
+            get
+            {
+                return raio*2;
+            }
+
+        }
+
         public double Raio
         {
             get
@@ -37,14 +46,6 @@ namespace Ex1_Aula_28_08
             {
                 raio = value;
             }
-        }
-        public double Diametro
-        {
-            get
-            {
-                return raio*2;
-            }
-            
         }
     }
 }

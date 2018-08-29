@@ -43,15 +43,15 @@ namespace Ex6_lista_3
         }
         public void AddConta(Conta c1)
         {
-            for (int i = 0; i < MAX; i++)
-            {
+
+            
                 if (qtdd < MAX)
                 {
-                    contasB[i] = c1;
+                    contasB[qtdd] = c1;
                     qtdd++;
-                    break;
+                    
                 }
-            }
+            
 
         }
         public void RemoveConta(Conta c1)

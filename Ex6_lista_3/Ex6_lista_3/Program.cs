@@ -35,6 +35,7 @@ namespace Ex6_lista_3
             c1.ListarContas();
             Console.WriteLine("Lista contas banco:");
             b1.ListarContas();
+            Console.WriteLine("Lmites Listas:");
             Console.WriteLine("Limite:" + con1.Limite);
             con1.SolcitarLimite(500, 123);
             Console.WriteLine("Limite:" + con1.Limite);
@@ -42,6 +43,18 @@ namespace Ex6_lista_3
             Console.WriteLine("Limite:" + con1.Limite);
             c1.RemoveConta(con1);
             b1.RemoveConta(con1);
+            con2.NumAgencia = 456;
+            con2.NumConta = 2;
+            con2.TempoConta = 3;
+            con2.Senha = 111;
+            c2.AddConta(con2);
+            con2.ClienteC = c2;
+            c2.AddConta(con1);
+            con1.ClienteC = c2;
+            Console.WriteLine("Lista contas cliente 2:");
+            c2.ListarContas();
+
+
             Console.Read();
 
 

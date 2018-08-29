@@ -21,15 +21,14 @@ namespace Ex6_lista_3
 
         public void AddConta(Conta c1)
         {
-            for (int i = 0; i < MAX; i++)
-            {
-                if (qtdd < MAX)
+           
+             if (qtdd < MAX)
                 {
-                    contas[i] = c1;
+                    contas[qtdd] = c1;
                     qtdd++;
-                    break;
+                    
                 }
-            }
+           
 
         }
         public void RemoveConta(Conta c1)
@@ -58,7 +57,7 @@ namespace Ex6_lista_3
                 Console.WriteLine(contas[i].NumConta);
                 Console.WriteLine(contas[i].NumAgencia);
                 Console.WriteLine(contas[i].Saldo);
-                Console.WriteLine(contas[i].Limite+"\n\n\n\n");
+                Console.WriteLine(contas[i].Limite+"\n");
             }
         }
         public string Nome

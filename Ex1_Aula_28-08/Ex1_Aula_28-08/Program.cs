@@ -168,8 +168,8 @@ namespace Ex1_Aula_28_08
 
             foreach (Figura c in figuras)
             {
-                double soma = c.Area();
-                soma=soma+soma
+                double soma= 0;
+                soma = c.Area + soma;
                    }
         }
 

@@ -53,6 +53,7 @@ namespace Ex9_lista_3
             //exibindo fatura
             Console.Write("\n");
             k1.ValorTosa();
+            k1.Dono.list();
             Console.Read();
             
 

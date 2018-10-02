@@ -9,7 +9,7 @@ namespace ex_pizza
     class Produto
     {
         private string nome;
-        private double preco;
+        protected double preco;
         private int numero;
         private ItemPedido pedido;
         private DiskPizza pizzaria;
@@ -27,18 +27,7 @@ namespace ex_pizza
             }
         }
 
-        public double Preco
-        {
-            get
-            {
-                return preco;
-            }
-
-            set
-            {
-                preco = value;
-            }
-        }
+        
 
         public int Numero
         {
@@ -79,9 +68,9 @@ namespace ex_pizza
             }
         }
 
-        public virtual void Get_Preco()
+        public virtual double Get_Preco()
         {
-            Preco=4.50;
+            return preco=4.50;
         }
 
     }

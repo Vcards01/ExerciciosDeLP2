@@ -9,9 +9,9 @@ namespace ex_pizza
     class Pizza:Produto
     {
         private List<Ingrediente> ingredientes = new List<Ingrediente>();
-        public override void Get_Preco()
+        public override double Get_Preco()
         {
-            Preco=25;
+           return preco=25.50;
         }
         public void ListaIngredientes()
         {
@@ -21,6 +21,17 @@ namespace ex_pizza
                 Console.WriteLine(c.Valor);
             }
 
+        }
+        public void add(string nome)
+        {
+            for (int i = 0; i < ingredientes.Count; i++)
+            {
+                if (nome == ingredientes[i].Nome)
+                {
+                    ingredientes.Add(ingredientes[i]);
+                    preco=ingredientes[i].Valor+Get_Preco();
+                }
+            }
         }
         public void remover(string nome)
         {

@@ -12,7 +12,7 @@ namespace Ex_petshop
         private long cpf;
         private List<Cachorro> pets;
 
-        public Pessoa(string nome, long cpf, List<Cachorro> pets)
+        public Pessoa(string nome, long cpf)
         {
             Nome = nome;
             Cpf = cpf;

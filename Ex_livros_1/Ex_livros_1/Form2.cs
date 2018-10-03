@@ -35,6 +35,7 @@ namespace Ex_livros_1
                 Form1 form = new Form1(true, result);
                 form.StartPosition = FormStartPosition.CenterParent;
                 form.ShowDialog(this);
+                Fill("");
             }
             
         }

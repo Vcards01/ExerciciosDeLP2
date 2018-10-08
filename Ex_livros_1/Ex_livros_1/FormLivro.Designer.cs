@@ -81,7 +81,6 @@
             // 
             // TxtNumero
             // 
-            this.TxtNumero.Enabled = false;
             this.TxtNumero.Location = new System.Drawing.Point(358, 65);
             this.TxtNumero.Name = "TxtNumero";
             this.TxtNumero.Size = new System.Drawing.Size(92, 20);

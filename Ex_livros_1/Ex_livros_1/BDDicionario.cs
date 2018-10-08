@@ -27,7 +27,7 @@ namespace Ex_livros_1
 
         public void Save(Livro l)
         {
-            l.Codigo = livro.Count;
+            
             livro.Add(l.Codigo, l);
         }
 
